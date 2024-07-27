@@ -1,20 +1,7 @@
-/**
- * selectFx.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2014, Codrops
- * http://www.codrops.com
- */
+
 ;( function( window ) {
-	
 	'use strict';
 
-	/**
-	 * based on from https://github.com/inuyaksa/jquery.nicescroll/blob/master/jquery.nicescroll.js
-	 */
 	function hasParent( e, p ) {
 		if (!e) return false;
 		var el = e.target||e.srcElement||e||false;
@@ -23,11 +10,7 @@
 		}
 		return (el!==false);
 	};
-	
-	/**
-	 * extend obj function
-	 */
-	function extend( a, b ) {
+function extend( a, b ) {
 		for( var key in b ) { 
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
@@ -36,9 +19,6 @@
 		return a;
 	}
 
-	/**
-	 * SelectFx function
-	 */
 	function SelectFx( el, options ) {	
 		this.el = el;
 		this.options = extend( {}, this.options );
@@ -46,33 +26,18 @@
 		this._init();
 	}
 
-	/**
-	 * SelectFx options
-	 */
 	SelectFx.prototype.options = {
-		// if true all the links will open in a new tab.
-		// if we want to be redirected when we click an option, we need to define a data-link attr on the option of the native select element
 		newTab : true,
-		// when opening the select element, the default placeholder (if any) is shown
 		stickyPlaceholder : true,
-		// callback when changing the value
 		onChange : function( val ) { return false; }
 	}
 
-	/**
-	 * init function
-	 * initialize and cache some vars
-	 */
 	SelectFx.prototype._init = function() {
-		// check if we are using a placeholder for the native select box
-		// we assume the placeholder is disabled and selected by default
+
 		var selectedOpt = this.el.querySelector( 'option[selected]' );
 		this.hasDefaultPlaceholder = selectedOpt && selectedOpt.disabled;
-
-		// get selected option (either the first option with attr selected or just the first option)
 		this.selectedOpt = selectedOpt || this.el.querySelector( 'option' );
 
-		// create structure
 		this._createSelectEl();
 
 		// all options
@@ -91,9 +56,6 @@
 		this._initEvents();
 	}
 
-	/**
-	 * creates the structure for the select element
-	 */
 	SelectFx.prototype._createSelectEl = function() {
 		var self = this, options = '', createOptionHTML = function(el) {
 			var optclass = '', classes = '', link = '';

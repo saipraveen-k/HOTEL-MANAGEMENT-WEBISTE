@@ -13,12 +13,6 @@
   font-weight: normal;
   font-style: normal;
 }
-/*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -236,7 +230,6 @@ th {
   padding: 0;
 }
 
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
   *:before,
@@ -8127,7 +8120,7 @@ div.cs-select span {
 #availability .a-col.action a {
   align-items: center;
   vertical-align: middle;
-  heght: 100%;
+  height: 100%;
   line-height: 20px;
   padding: 14px;
   display: block;
@@ -8142,7 +8135,7 @@ div.cs-select span {
 }
 #availability .a-col.action a::after {
   font-family: 'themify';
-  speak: none;
+  speak-as: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -9233,5 +9226,3 @@ input[type="text"] {
   z-index: 9999;
   background: url(../images/hourglass.svg) center no-repeat #222222;
 }
-
-/*# sourceMappingURL=style.css.map */
