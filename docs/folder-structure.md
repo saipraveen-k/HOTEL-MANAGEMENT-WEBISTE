@@ -1,0 +1,48 @@
+# Folder Structure
+
+```text
+HOTEL-MANAGEMENT-WEBISTE/
+  src/
+    app/
+      admin/
+        page.tsx
+      auth/
+        login/page.tsx
+        register/page.tsx
+        forgot-password/page.tsx
+      bookings/page.tsx
+      dashboard/page.tsx
+      rooms/
+        page.tsx
+        [id]/page.tsx
+      error.tsx
+      globals.css
+      layout.tsx
+      loading.tsx
+      page.tsx
+    components/
+      layout/
+        footer.tsx
+        navbar.tsx
+      ui/
+        button.tsx
+        input.tsx
+      providers.tsx
+    lib/
+      ai/recommendations.ts
+      api/bookings.ts
+      firebase.ts
+      mock-data.ts
+      utils.ts
+    store/
+      use-app-store.ts
+    types/
+      index.ts
+    middleware.ts
+  docs/
+    deployment-guide.md
+    firestore-schema.md
+    folder-structure.md
+  firestore.rules
+  package.json
+```

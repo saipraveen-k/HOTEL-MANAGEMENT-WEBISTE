@@ -1,0 +1,49 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.role == 'admin';
+    }
+
+    match /users/{userId} {
+      allow read, update: if isSignedIn() && request.auth.uid == userId;
+      allow create: if isSignedIn();
+    }
+
+    match /rooms/{roomId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /bookings/{bookingId} {
+      allow create, read: if isSignedIn();
+      allow update: if isSignedIn() || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /reviews/{reviewId} {
+      allow create: if isSignedIn();
+      allow read: if true;
+      allow update, delete: if isAdmin();
+    }
+
+    match /payments/{paymentId} {
+      allow read, create: if isSignedIn();
+      allow update, delete: if isAdmin();
+    }
+
+    match /amenities/{amenityId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /notifications/{notificationId} {
+      allow read, create: if isSignedIn();
+      allow update, delete: if isAdmin();
+    }
+  }
+}
