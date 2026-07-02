@@ -121,5 +121,3 @@ firestore.rules
 - Add moderation queue UI for reviews and notifications center
 
 ---
-
-Built for internships, hackathons, placements, and portfolio demos.
