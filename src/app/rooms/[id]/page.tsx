@@ -2,8 +2,10 @@ import { notFound } from "next/navigation";
 import { rooms } from "@/lib/mock-data";
 import { Button } from "@/components/ui/button";
 
-export default function RoomDetailsPage({ params }: { params: { id: string } }) {
-  const room = rooms.find((item) => item.id === params.id);
+export default async function RoomDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  // Next.js 15: dynamic route params are a Promise
+  const { id } = await params;
+  const room = rooms.find((item) => item.id === id);
   if (!room) return notFound();
 
   return (
